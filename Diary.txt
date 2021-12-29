@@ -1,0 +1,18 @@
+This is a diary of my progress through the Odin Project.
+This will contain notes and random thoughts I've had as I work through the curriculum.
+
+Dec 28th.
+Began Odin Project.
+
+HTML boilerplate: 
+<!DOCTYPE html> - specifies version of HTML
+
+<html>
+    <head> -place where we put important metadata
+        <title> </title> -gives browser tab a name
+        <meta charset="utf-8"> -encoding of page
+    </head>
+
+    <body> -where the text of the webpage is added
+    </body>
+</html>
