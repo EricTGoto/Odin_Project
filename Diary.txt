@@ -31,3 +31,11 @@ div {
 More specific CSS rules take precedence.
 ID > Class > Type
 If tie, whichever rule was specified last is the winner.
+
+Dec 29.
+Learned about External, Inline and Internal CSS.
+use <link rel="stylesheet" href="filename.css"> for external css, most common method
+
+Worked on exercises 1-6 of the CSS foundations class. Made my own css and html files where I applied css to classes, ids with external, inline and internal CSS.
+
+Started learning about the box model and the dev tools available in browser.
