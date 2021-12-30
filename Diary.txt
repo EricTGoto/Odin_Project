@@ -16,3 +16,18 @@ HTML boilerplate:
     <body> -where the text of the webpage is added
     </body>
 </html>
+
+CSS lets you style HTML, add rules to selectors and HTML elements that are selected will follow those CSS rules.
+example: 
+the following makes all div text purple
+div {
+    color: puple;
+}
+
+. is the universal selector i.e. . { }
+.___ is the class selector i.e. .text
+#___ is the ID selector i.e. #pancake_section
+
+More specific CSS rules take precedence.
+ID > Class > Type
+If tie, whichever rule was specified last is the winner.
