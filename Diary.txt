@@ -39,3 +39,53 @@ use <link rel="stylesheet" href="filename.css"> for external css, most common me
 Worked on exercises 1-6 of the CSS foundations class. Made my own css and html files where I applied css to classes, ids with external, inline and internal CSS.
 
 Started learning about the box model and the dev tools available in browser.
+
+Dec 30.
+
+Box model notes:
+Everything on a webpage is a rectangular box.
+Essentially, want to manipulate how the boxes are nested and stacked
+
+Padding: space between edge of box and contents
+Margin: space between box and another box
+Border: space between margin and padding
+
+two types of display types: inner display, outer display types
+- inner display type dictates how elements inside a box are laid outer
+- outer display type is whether or not a box is block or inline
+
+two types of outer display types: block boxes and inline boxes:
+
+block boxes:
+- box will break onto a new line
+- box will extend in the inline direction to fill the space available in its container
+- width and height properties are respected
+- padding, margin and border will cause other elements to be pushed away from the box
+
+inline boxes:
+- box will not break onto a new line
+- width and height properties will not apply
+- vertical padding, margins and borders will apply but not cause other inline boxes to move away from the box
+- horizontal padding, margins and borders will apply and will cause other inline boxes to move away from the box
+
+use the css property display, i.e display: flex; display: block; display: inline;
+
+parts of a box:
+- content box: modified with properties like width and height
+- padding box: sits around content. use padding and related properties
+- border box: wraps content and padding. use border and other properties
+- margin box: wraps content, padding and border. use margin and other properties
+
+standard css model:
+margin not accounted for in total size of box. just content, border and padding
+
+alternative css model:
+size of box is just height and width properties
+enable by using 
+box-sizing: border-box;
+if you want all elements to inherit the box-sizing: border-box; then put it in the html selector
+html {
+    box-sizing: border-box;
+}
+
+lot of info can be found here: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model

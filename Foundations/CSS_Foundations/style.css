@@ -1,16 +1,14 @@
-div {
-    color: white;
-    font-size: 32px;
+.one {
     background-color: red;
+    padding: 10px;
+    border: 20px solid #9B51E0;
+    margin: 100px; 
 }
 
-p {
-    color: red;
-    background-color: green;
-    font-size: 18px;
-}
-
-button {
-    background-color: orange;
-    font-size: 18px;
+.two {
+    background-color: blue;
+    padding: 30px;
+    border: 20px solid rgb(175, 23, 23);
+    margin: 100px;
+    color: white;
 }
