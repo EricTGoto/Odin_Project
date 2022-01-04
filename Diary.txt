@@ -93,4 +93,8 @@ lot of info can be found here: https://developer.mozilla.org/en-US/docs/Learn/CS
 Dec 31.
 
 Continued reading about box model. 
+Worked on margin and padding exercise 1
 
+Jan 2 2022.
+
+Working on margin and padding exercise 2.
