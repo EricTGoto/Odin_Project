@@ -98,3 +98,9 @@ Worked on margin and padding exercise 1
 Jan 2 2022.
 
 Working on margin and padding exercise 2.
+
+Jan 3
+
+Finished first attempt at margin and padding 2.
+Will need to go back and look at the css articles from the previous lessons to refresh things like margin: 0 auto or how to put
+ horizontal and vertical attributes in the same line.
