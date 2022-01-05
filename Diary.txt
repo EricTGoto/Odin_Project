@@ -103,4 +103,35 @@ Jan 3
 
 Finished first attempt at margin and padding 2.
 Will need to go back and look at the css articles from the previous lessons to refresh things like margin: 0 auto or how to put
- horizontal and vertical attributes in the same line.
+horizontal and vertical attributes in the same line.
+
+Jan 4
+
+Working on margin and padding 2 again. This time I will write down my thoughts before I attempt so what I'm doing is more clear and not just guess and check.
+
+What I see from the desired outcome image:
+- the blue cards have margins with each other
+- the blue cards have padding with the white container
+- horizontal and vertical padding for the middle card is different
+- the last card has its content centred
+- button is on a new line, button is by default an inline element so manually change it to a block
+    - use margin: 0 auto; to centre the button
+
+Learned:
+- can use margin: 0 auto; to easily centre items
+- when using 2 values with margin/padding/border: [top/bottom] [left/right]
+
+Began Flexbox section.
+
+flex container: any element with display: flex
+flex item: any element that is in a flex container
+
+any element can be both a flex container and a flex item, i.e. a flex item can also have display: flex
+
+flex declaration is shorthand for 3 properties:
+default is flex: 0 1 auto, but if only one value specified (flex: 1;) then flex is interpreted as flex: 1 1 0;
+- flex-grow: flex item's growth factor
+- flex-shrink: flex item's shrink factor
+- flex-basis: sets initial size of flex item
+
+flex has two directions: column and row. row is default
