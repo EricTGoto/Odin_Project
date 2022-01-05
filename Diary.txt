@@ -131,10 +131,22 @@ any element can be both a flex container and a flex item, i.e. a flex item can a
 flex declaration is shorthand for 3 properties:
 default is flex: 0 1 auto, but if only one value specified (flex: 1;) then flex is interpreted as flex: 1 1 0;
 - flex-grow: flex item's growth factor
+             causes item to stretch and take up any available space on that axis, or proportion
 - flex-shrink: flex item's shrink factor
+               if not enough space and flex-shrink is positive integer, item can become smaller than the flex-basis
 - flex-basis: sets initial size of flex item, auto asks to check the specified height
               flex basis refers to height in a column flex container and vice versa
 
-flex has two directions: column and row. row is default
+flex has two directions (4 with the reverse directions): column and row. row is default
 direction is set with flex-direction: [row/column];
 
+justify-content: aligns items across the main axis
+align-items: align items along the cross axis
+gap: adds space between flex items
+flex-wrap: create multiline flex
+flex-flow: shorthand for flex-direction and flex-wrap together: flex-flow: [direction] [wrap]
+
+some standard predefined flex values:
+flex: initial; resets item to have initial flexbox values (flex: 0 1 auto)
+flex: auto; same as flex: 1 1 auto;
+flex: none; created inflexible flex items. i.e. flex: 0 0 auto;
