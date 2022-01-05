@@ -132,6 +132,9 @@ flex declaration is shorthand for 3 properties:
 default is flex: 0 1 auto, but if only one value specified (flex: 1;) then flex is interpreted as flex: 1 1 0;
 - flex-grow: flex item's growth factor
 - flex-shrink: flex item's shrink factor
-- flex-basis: sets initial size of flex item
+- flex-basis: sets initial size of flex item, auto asks to check the specified height
+              flex basis refers to height in a column flex container and vice versa
 
 flex has two directions: column and row. row is default
+direction is set with flex-direction: [row/column];
+
