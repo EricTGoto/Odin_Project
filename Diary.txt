@@ -123,6 +123,10 @@ Learned:
 
 Began Flexbox section.
 
+axes: main and cross
+if flex-direction is row or row-reverse: main axis is in the inline direction, cross is block
+if flex-direction is column or column-reverse: main axis is in the block direction, cross is inline
+
 flex container: any element with display: flex
 flex item: any element that is in a flex container
 
@@ -150,3 +154,15 @@ some standard predefined flex values:
 flex: initial; resets item to have initial flexbox values (flex: 0 1 auto)
 flex: auto; same as flex: 1 1 auto;
 flex: none; created inflexible flex items. i.e. flex: 0 0 auto;
+
+Jan 5
+
+Continue to read the assignment articles in the alignment section. Try to finish all of the exercises and move to the next section.
+
+align-self: controls alignment of an individual flex item on the cross axis
+align-content: controls space between flex lines on the cross axis
+gap, column-gap, row-gap: for creating gaps
+
+values for align-items/align-self: flex-start, flex-end, center, stretch, baseline
+values for align-content: flex-start, flex-end, center, space-between, space-around, stretch, space-evenly
+values for justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly
