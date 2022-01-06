@@ -178,4 +178,15 @@ flex-header:
 - ul default margin/padding
 - using flex makes the list items change to horizontal
 
-difference between space-between and space-around
+Jan 6
+
+difference between space-between and space-around:
+- space between has items evenly distributed with first item at start of container and last one at the end
+- space evenly has items that are evenly distributed with equal space around The_box_model
+
+flex-header-2:
+- padding for entire header
+- list links should be flexed
+- every item is vertically cenetered (align-items: center in header)
+- my solution involved creating a flex container for the items that are stuck to the right end and using justify-content: flex-end
+- TOP solution was to create two classes left and right for the items and using justify-content: space-between
