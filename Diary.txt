@@ -166,3 +166,16 @@ gap, column-gap, row-gap: for creating gaps
 values for align-items/align-self: flex-start, flex-end, center, stretch, baseline
 values for align-content: flex-start, flex-end, center, space-between, space-around, stretch, space-evenly
 values for justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly
+
+exercise discussion:
+
+flex-center: simple solution, enable flex and then use align-items and justify-content center
+
+flex-header:
+- logo is centred (justify-content, align-items)
+- items in header have padding 
+- links are pushed to left and right (justify-content: left right?)
+- ul default margin/padding
+- using flex makes the list items change to horizontal
+
+difference between space-between and space-around
