@@ -24,8 +24,9 @@ body {
 }
 
 .text {
-    margin-bottom: 16px;
+    margin-bottom: 6px;
 }
+
 .modal {
   display: flex;
   background: white;

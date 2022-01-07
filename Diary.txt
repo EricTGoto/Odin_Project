@@ -190,3 +190,15 @@ flex-header-2:
 - every item is vertically cenetered (align-items: center in header)
 - my solution involved creating a flex container for the items that are stuck to the right end and using justify-content: flex-end
 - TOP solution was to create two classes left and right for the items and using justify-content: space-between
+
+flex-information:
+- information is cenetered while plants are spaced evenly so make two flex containers
+- containers (for the image and text) have a specific width and text wraps (flex-wrap)
+- pictures are cenetered within text (justify-content in the container)
+- text is displayed with just wrapping
+- centering text easily done with text-align
+
+flex-modal:
+- exclamation mark seems to be in its own container, everything else in another container
+- title inline with exit button?
+- create a flex for the header so the exit button and the header are together
