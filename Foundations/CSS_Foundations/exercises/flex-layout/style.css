@@ -45,6 +45,8 @@ ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
+    display: flex;
+    gap: 16px;
 }
 
 .header,
@@ -58,30 +60,10 @@ ul {
     background-color: rgb(247, 245, 245);
 }
 
-.left-links,
-.right-links {
-    gap: 16px;
-}
-
-.header .left-links {
-    display: flex; 
-}
-
-.header .right-links {
-    display: flex;
-}
-
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.footer .left-links {
-    display: flex;
-}
-
-.footer .right-links {
-    display: flex;
+    gap: 8px;
 }

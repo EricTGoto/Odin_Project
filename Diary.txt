@@ -211,3 +211,5 @@ flex-layout:
 - footer bottom with text at ends (flex-start/end?)
 - same with the header, text at ends
 - body and content with flex-direction of column
+- top solution puts flex in the ul -> makes sense
+
