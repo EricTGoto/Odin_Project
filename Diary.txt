@@ -213,3 +213,7 @@ flex-layout:
 - body and content with flex-direction of column
 - top solution puts flex in the ul -> makes sense
 
+flex-layout2:
+- looks like three sections: header, main, and footer
+- main is also its own flex container with a sidebar and the content
+- use flex for the body and set direction to column
