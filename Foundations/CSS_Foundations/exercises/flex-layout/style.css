@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: Roboto, sans-serif;
+
+  /* new code added after this*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img {
+  width: 600px;
+}
+
+button {
+  font-family: Roboto, sans-serif;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+
+  /* new code added below this */
+  padding: 8px;
+}
+
+input {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 8px 24px;
+  width: 400px;
+  margin-bottom: 16px;
+}
+
+/* new code added below this */
+a {
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    color: rgb(54, 56, 54);
+
+}
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.header,
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.footer {
+    background-color: rgb(247, 245, 245);
+}
+.header .left-links {
+    display: flex;
+    gap: 16px;
+}
+
+.header .right-links {
+    display: flex;
+    gap: 16px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .left-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer .right-links {
+    display: flex;
+    gap: 16px;
+}
