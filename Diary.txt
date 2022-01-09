@@ -202,3 +202,12 @@ flex-modal:
 - exclamation mark seems to be in its own container, everything else in another container
 - title inline with exit button?
 - create a flex for the header so the exit button and the header are together
+
+Jan 9
+
+flex-layout:
+- basically looks like google
+- logo, text box and buttons cenetered
+- footer bottom with text at ends (flex-start/end?)
+- same with the header, text at ends
+- body and content with flex-direction of column

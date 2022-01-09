@@ -57,14 +57,18 @@ ul {
 .footer {
     background-color: rgb(247, 245, 245);
 }
-.header .left-links {
-    display: flex;
+
+.left-links,
+.right-links {
     gap: 16px;
+}
+
+.header .left-links {
+    display: flex; 
 }
 
 .header .right-links {
     display: flex;
-    gap: 16px;
 }
 
 .content {
@@ -76,10 +80,8 @@ ul {
 
 .footer .left-links {
     display: flex;
-    gap: 16px;
 }
 
 .footer .right-links {
     display: flex;
-    gap: 16px;
 }
