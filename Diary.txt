@@ -217,3 +217,14 @@ flex-layout2:
 - looks like three sections: header, main, and footer
 - main is also its own flex container with a sidebar and the content
 - the cards should have their own container
+
+goal: try to finish flexfroggy levels by Jan 12
+
+started working on the landing page assignment
+
+landing page assignment: 
+- landing page seems to have 4 sections?
+    - header, info section, quote section and sign up section
+- header is cenetered has a list with three links
+    - header break down into two flex items?
+- information section has text cenetered and 4 items also cenetered
