@@ -216,4 +216,4 @@ flex-layout:
 flex-layout2:
 - looks like three sections: header, main, and footer
 - main is also its own flex container with a sidebar and the content
-- use flex for the body and set direction to column
+- the cards should have their own container

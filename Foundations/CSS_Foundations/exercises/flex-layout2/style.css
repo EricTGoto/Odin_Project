@@ -15,11 +15,11 @@ body {
     color: white;
 
     /*added code*/
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 900;
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 16px;
   }
   
   .footer {
@@ -40,12 +40,21 @@ body {
     /* new code below */
     display: flex;
     align-items: stretch;
+    flex: auto;
+    padding: 16px;
+    flex-shrink: 0;
+
   }
   
   .card {
     border: 1px solid #eee;
     box-shadow: 2px 4px 16px rgba(0,0,0,.06);
     border-radius: 4px;
+
+    /* new code below */
+    width: 300px;
+    height: 350px;
+    padding: 16px;
   }
 
   /* new code below */
@@ -56,16 +65,21 @@ body {
   }
 
   ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
+
   .middle {
       display: flex;
-      flex-wrap: wrap;
   }
 
   .cards {
     display: flex;
-    
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px;
   }
