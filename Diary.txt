@@ -228,3 +228,7 @@ landing page assignment:
 - header is cenetered has a list with three links
     - header break down into two flex items?
 - information section has text cenetered and 4 items also cenetered
+
+Jan 10:
+
+continue working on landing page assignment
