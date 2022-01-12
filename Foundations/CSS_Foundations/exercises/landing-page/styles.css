@@ -78,33 +78,48 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 50px;
 }
 
 .main-info-text {
     font-size: 36px;
     font-weight: bolder;
-    color: #1F2937
+    color: #1F2937;
+    margin: 50px;
 }
 .containers {
     display: flex;
-    gap: 50px;
+    gap: 35px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100px;
+    width: 150px;
     height: 300px;
-    gap: 75px;
 }
 
 .small-image-container {
     border-color: #3882F6;
     border-style: solid;
     border-width: thick;
+    border-radius: 8px;
     background-color: white;
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
+    margin: 8px;
+}
+
+.quote_section {
+    display: flex;
+    justify-content: center;
+    background-color: #E5E7EB;
+    height: 400px;
+    width: 700px;
+}
+
+.quote {
+    font-size: 36px;
+    font-style: italic;
+    color: #1F2937;
 }

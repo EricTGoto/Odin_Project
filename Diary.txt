@@ -232,3 +232,11 @@ landing page assignment:
 Jan 10:
 
 continue working on landing page assignment
+
+Jan 11:
+
+do levels 11-24 of flex froggy
+- level 14 introduced the order property
+finished flex froggy
+
+
