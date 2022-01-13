@@ -9,12 +9,7 @@ a {
     color: #E5E7EB
 }
 
-.header_top {
-    display: flex;
-    color: #E5E7EB;
-    padding: 16px;
-    justify-content: space-between;
-}
+
 
 ul {
     display: flex;
@@ -25,7 +20,22 @@ ul {
 }
 
 .header {
+    display: flex;
+    justify-content: center;
     background-color: #1F2937;
+}
+
+
+.header_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_top {
+    display: flex;
+    color: #E5E7EB;
+    padding: 16px 80px;
+    justify-content: space-between;
 }
 
 .header_bottom {
@@ -56,12 +66,11 @@ p {
 
 .image_placeholder {
     display: flex;
-    flex-grow: 1;
     justify-content: center;
     align-items: center;
     background-color: grey;
     color: white;
-    width: 530px;
+    width: 400px;
 }
 
 button {
@@ -103,7 +112,7 @@ button {
 .small-image-container {
     border-color: #3882F6;
     border-style: solid;
-    border-width: thick;
+    border-width: 3px;
     border-radius: 8px;
     background-color: white;
     height: 100px;
@@ -113,15 +122,27 @@ button {
 
 .quote_section {
     display: flex;
-    flex-direction: column;
+    width: 100vw;
     justify-content: center;
+    align-items: center;
     background-color: #E5E7EB;
     height: 400px;
-    width: 700px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: red;
 }
 
 .quote {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
     font-size: 36px;
     font-style: italic;
     color: #1F2937;
+}
+
+.quote_name {
+    align-self: flex-end;
+    font-weight: 550;
+    font-size: 20px;
 }

@@ -239,4 +239,11 @@ do levels 11-24 of flex froggy
 - level 14 introduced the order property
 finished flex froggy
 
+work a bit on the landing page:
+- need to centre the content and have the background expand -> create separate containers for content and center? background on its own
 
+Jan 12:
+
+goal: finish the landing page and begin the js foundations section
+
+- 
