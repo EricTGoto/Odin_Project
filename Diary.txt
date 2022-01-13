@@ -246,4 +246,5 @@ Jan 12:
 
 goal: finish the landing page and begin the js foundations section
 
+- the blue background in the header doesn't stretch all the way
 - 
