@@ -247,4 +247,15 @@ Jan 12:
 goal: finish the landing page and begin the js foundations section
 
 - the blue background in the header doesn't stretch all the way
+
+Jan 13:
+
+- reason why the backgroudn didn't stretch all the way is that there is a default padding/margin
+- had a problem where there was a horizontal scroll bar, problem was from having set a width for the quote and main sections
+    - didn't need to set a width because body and html have a width set so the flex containers will stretch to fill the width
+
+-finished first version of landing page
+some issues I may want to address:
+- sizing of the ad section at different screen widths
+- widths of all sections at different screen widths
 - 
