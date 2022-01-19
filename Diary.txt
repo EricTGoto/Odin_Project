@@ -258,4 +258,18 @@ Jan 13:
 some issues I may want to address:
 - sizing of the ad section at different screen widths
 - widths of all sections at different screen widths
-- 
+- add some flair or originality
+- fix the font?
+
+Jan 18:
+
+- started the JS foundations
+- console.log() to print something to the dev console in the browser
+- can include js into a webapage by linking <script src="javascript.js"></script>
+- declare a variable with let
+- declare a constant with const
+- can use both ' and " for strings
+- use \ to escape a character in a string
+- use ` to create template literal (like an f string in python), variables/expressions wrapped in ${}
+-
+
