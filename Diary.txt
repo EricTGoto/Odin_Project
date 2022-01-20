@@ -271,5 +271,11 @@ Jan 18:
 - can use both ' and " for strings
 - use \ to escape a character in a string
 - use ` to create template literal (like an f string in python), variables/expressions wrapped in ${}
--
+
+Jan 19:
+
+psuedo code: writing out logic for program in natural language instead of code
+decompose problems into subproblems
+
+
 
