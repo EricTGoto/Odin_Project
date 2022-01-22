@@ -276,6 +276,9 @@ Jan 19:
 
 psuedo code: writing out logic for program in natural language instead of code
 decompose problems into subproblems
+finished the console based rock paper scissors game
 
-
+Jan 21:
+- work on the JS exercises in Foundations part 4
+    - worked on first 3 exercises
 
