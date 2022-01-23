@@ -282,3 +282,52 @@ Jan 21:
 - work on the JS exercises in Foundations part 4
     - worked on first 3 exercises
 
+Jan 22:
+- continue working on the JS exercises, most of them are pretty trivial
+- start reading about DOM and DOM maniuplation
+
+DOM: Document Object model
+    - tree like representaiton of the contents of a webpage
+    - tree of nodes with different relationships depending on how they are arranged in the HTML Document
+
+    - target nodes with selectors:
+        - element.querySelector(selector) returns reference to the first match of selector
+        - element.querySelectorAll(selectors) returns a "nodelist" containing references to all of the matches of the selectors
+
+    - element creatoin
+        - document.createElement(tagName, [options])
+        - creates an element in memory but does not place it
+
+    - append elements
+        - parentNode.appendChild(childNode) appends childNode as the last child of parentNode
+        - parentNode.insertBefore(newNode, referenceNode) inserts newNode into parentNode before referenceNode
+    
+    - remove elements
+        - parentNode.removeChild(child) removes child from parentNode on the DOM and returns reference to child
+
+    - alter elements
+        - get a reference to an element and then you can make modifications to it like changing colour and so on
+            e.g: const div = document.createElement('div')
+                 div.style.color = 'blue';
+                 div.style.cssText = 'color: blue; background: white';
+    
+    - editing attributes
+        - div.setAttribute('id','theDiv');
+            - if id exists, update it to 'theDiv' else create an id with value "theDiv"
+        
+        - div.getAttribute('id'): returns value of specified attribute
+
+        - div.removeAttribute('id'); removes specified attribute
+
+    - working with classes
+        - div.classList.add('new'): adds class "new" to your div
+        - div.classList.remove('new'): remove "new" class from div
+        - div.classList.toggle('active'):  toggles the style "active", if it doesn't exist, it creates it
+    
+    - adding text content
+        - div.textContent = 'Hello World!'
+    
+    
+
+    
+    
