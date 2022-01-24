@@ -326,8 +326,167 @@ DOM: Document Object model
     
     - adding text content
         - div.textContent = 'Hello World!'
-    
-    
 
+Jan 23: 
+Learning about DOM Continued
+Learn about callback functions since eventListeners rely on them
+try to work on the wes bos 30 day challenge ~ 1+ every 2 days
+
+    Events:
+        - make your page dynamic
+            e.g. respond to mouse clicks or keypresses
+        - three ways to add Events
+            1. add to html
+                <button onClick="alert('Hello World')>Click Me</button>
+                not a good way because HTML gets cluttered and can only have 1 onClick event per element
+            2. put the JS in a JS filename
+
+                html document side:
+                <button id="btn">Click me</button>
+
+                js file side:
+                const btn = document.querySelector('#btn');
+                btn.onClick = () => alert('Hello World");
+
+                this is better but the problem of a DOM element only being able to have 1 onClick property is not solved
+
+            3. use add event listener
+
+                html document side:
+                <button id="btn">Click me</button>
+
+                js file side:
+                const btn = document.querySelector('#btn');
+                btn.addEventListener('click', () => {
+                    alert("Hello World");
+                });
     
-    
+        - use functions to organize code
+            e.g. if you have multiple buttons that alert user after click then make a function for the alert
+
+            function alertFunction() {
+                alert("Button Clicked");
+            }
+
+            btn.addEventListener('click', alertFunction)
+        
+
+
+
+callbacks:
+    - functions that are passed into another function as an argument
+
+    Normal Functions (Named Functions)
+    - the basic way to create a function
+
+    function helloFunction(name) {
+        console.log(`Hello ${name}`)
+    }
+
+    the above is a function declaration and broken into a few parts:
+        - function keyword
+        - name of function
+        - parameters: everything between ( ) is a parameters
+        - function body: part where function does something
+
+    call a normal function by typing the name of the function with ()
+
+    helloFunction("Bob")
+
+    Anonymous Functions
+    - are not named, but can be assigned to a variable
+    - mostly used by passing them into other functions as a callbacks
+
+
+    const helloFunction = function(name) {
+        console.log(`Hello ${name});
+    }
+
+    const helloFunction = (name) => {
+        console.log(`Hello $)
+    }
+
+    both can be called the same way:
+    helloFunction("bob")
+
+    Arrow Functions:
+    - shorter way to write a function
+    - if only one argument () can be omitted
+    - if arrow function is one line {} can be omitted
+    - when omitting {}, arrow function returns evaluated expression without requiring returns
+
+    examples with arguments:
+
+    const playThe = (funky) => {
+        return funky + " music";
+    }
+
+    const playThe = funky => {
+        return funky + " music";
+    }
+
+    const playThe = funky => funky + " music";
+
+    examples without arguments:
+
+    const playThat = () => "funky music";
+    const playThat = () => {return "funky music"; }
+    const playThat = () => {
+        return "funky music";
+    }
+
+    Example to understand callbacks:
+        function myForEach(array, callback) {
+            for (let i = 0; i < array.length; i++) {
+                callback(array[i]); // This is when the callback function gets called, or executed
+            }
+        }
+
+        // You would call it like this:
+        const myArry = [2, 3, 4, 2];
+        myForEach(myArry, (item) => {
+            console.log(item + 2); 
+        })
+
+        since an arrow function can be passed as a callback, it is passed into myForEach,
+        and then performs its function to console.log every item in the array plus 2
+
+        its also possible to do this:
+
+        function printItemPLusTwo(item) {
+            console.log(item + 2);
+        }
+
+        myForEach(myArry, printItemPlusTwo);
+            - printItemPlusTwo acts as the callback, when a function is passed into another function as a parameter, only the name is needed
+
+    Event Listeners:
+
+    const element = document.querySelector("#myId");
+    element.addEventListener('click', (event) => {
+        console.log(event.target.value);
+    })
+
+    where does event come from? as we learned from above, event is added into the callback by the addEventListener function
+    this is like myForEach adding the array elements into the callback, addEventListener has some part that passes the event object into the callback
+
+    Now that we know this,
+
+    function alertFunction() {
+        alert("Button Clicked");
+    }
+
+    btn.addEventListener('click', alertFunction)
+
+    makes a lot more sense. alertFunction is the callback
+
+Events continued:
+
+- e is an object that references the event itself
+    can do something like e.target to get info about the event's target
+    or can do e.target.style.background to change the event's target's background
+
+    Attaching Listeners to groups of nodes:
+        - use querySelectorAll('selector')
+
+        
