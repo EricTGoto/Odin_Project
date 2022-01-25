@@ -490,3 +490,49 @@ Events continued:
         - use querySelectorAll('selector')
 
         
+Jan 24th:
+
+Comments:
+- start working on adding a UI to rock paper scissors
+
+Notes: 
+
+event capture, propagation, bubbling and once:
+ - when an element is acted on, like clicked, the effect will "bubble" or ripple downwards and hit every element that is in the click area 
+ - for example if you have 3 concentric squares of different sizes with the bigger squares behind the smaller squres and you click on the smallest one,
+ the click will affect the squares from the smallest to the biggest -> this is bubbling
+ - if you use capture :true, it will go in reverse order. the biggest will be affected and then the medium sized square and then the smallest
+ - stopPropagation will make the bubbling stop -> good way to control what elements will get a certain action
+ - capture is added to the addEventListener
+ - once, also added to an addEventListener, makes the event listener only listen once (once: true)
+
+data attributes:
+
+- HTML elements can have attributes on them are are used for anything from accessibility to stylistic control -> basics
+- discouraged to make up your own attributes like <div highlight="true"></div>
+    - reason is HTML becomes invalid, and may conclflict with html updates in the future
+- BUT, you can make your own attributes by prefixing them with data-
+
+    e.g. <div data-foo></div>
+         <div data-size="large"></div>
+
+you can select elements with data attributes the following way (among many):
+
+<audio data-key="65" src="sound.mp3"></audio>
+
+audio[data-key="65"]
+
+if you want the reference to this element then
+
+const audio = document.querySelector(`audio[data-key="65"]`)
+
+git notes:
+- can make new branches using the command: git branch <branch_name>
+- change to the branch by using: git checkout <branch_name>
+- can create and change in one go by: git checkout -b <branch_name>
+- use git branch with no arguments to show all branches, the one with an asterisk beside it is the one you are currently on
+- a recommended workflow is to work on features on "test" branches, called feature branches, and once the feature is finished and tested, merge it to the main branch
+- merge with git merge <branch_name>, will take commits from <branch_name> and add to the branch that you are on
+- branches can be deleted by: git branch -d <branch_name> (if merged into main or with -D if not)
+- to push from a specific branch just do: git push origin <branch_name>
+

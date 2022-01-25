@@ -10,29 +10,26 @@ function convertNumToRockPaperScissors(num) {
 
 function playRound(choice) {
     const computerAction = convertNumToRockPaperScissors(computerPlay());
-    
     const result = document.querySelector(".result");
-
-    console.log(choice)
-    console.log(computerAction)
+    
     if (choice == "rock" && computerAction == "paper") {
-        result.textContent = `You lose! ${choice} loses to ${computerAction}`;
+        result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
         
     }
     else if (choice == "rock" && computerAction == "rock") {
-        result.textContent = "Tie";
+        result.textContent = "Tie!";
         
     }
     else if (choice == "rock" && computerAction == "scissors") {
-        result.textContent = `You win! ${choice} beats ${computerAction}`;
+        result.textContent = `You win! ${choice} beats ${computerAction}.`;
         
     }
     else if (choice == "paper" && computerAction == "rock") {
-        result.textContent = `You win! ${choice} beats ${computerAction}`;
+        result.textContent = `You win! ${choice} beats ${computerAction}.`;
         
     }
     else if (choice == "paper" && computerAction == "scissors") {
-        result.textContent = `You lose! ${choice} loses to ${computerAction}`;
+        result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
         
     }
     else if (choice == "paper" && computerAction == "paper") {
@@ -40,15 +37,16 @@ function playRound(choice) {
         
     }
     else if (choice == "scissors" && computerAction == "paper") {
-        result.textContent = `You win! ${choice} beats ${computerAction}`;
+        result.textContent = `You win! ${choice} beats ${computerAction}.`;
        
     }
     else if (choice == "scissors" && computerAction == "rock") {
-        result.textContent = `You lose! ${choice} loses to ${computerAction}`;
+        result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
     }
     else if (choice == "scissors" && computerAction == "scissors") {
         result.textContent = "Tie!";
     }
+    
 }
 
 function game() {
@@ -64,8 +62,10 @@ const container = document.querySelector('.container');
 
 
 const buttons = document.querySelectorAll('.buttons');
+
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-        playRound(e.target.className);
+        console.log(e.explicitOriginalTarget.parentElement.className) // allows me to select the rock button instead of the image itself
+        playRound(e.explicitOriginalTarget.parentElement.className);
     });
 });
