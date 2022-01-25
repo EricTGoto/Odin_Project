@@ -494,6 +494,7 @@ Jan 24th:
 
 Comments:
 - start working on adding a UI to rock paper scissors
+    - got the basics of it working, tomorrow improve the UI
 
 Notes: 
 
@@ -535,4 +536,8 @@ git notes:
 - merge with git merge <branch_name>, will take commits from <branch_name> and add to the branch that you are on
 - branches can be deleted by: git branch -d <branch_name> (if merged into main or with -D if not)
 - to push from a specific branch just do: git push origin <branch_name>
+
+Jan 25:
+- make my rps ui look better, add colours and show what the computer selected, try to use as much JS as possible
+
 
