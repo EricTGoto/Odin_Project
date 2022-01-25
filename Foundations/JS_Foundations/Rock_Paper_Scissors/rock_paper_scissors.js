@@ -11,35 +11,38 @@ function convertNumToRockPaperScissors(num) {
 function playRound(choice) {
     const computerAction = convertNumToRockPaperScissors(computerPlay());
     
-    
+    let firstLetter = choice.substr(0,1);
+    let firstLetterCapitalized = firstLetter.toUpperCase();
+    let capitalizedWord = firstLetterCapitalized + choice.substr(1);
+
     if (choice == "rock" && computerAction == "paper") {
         computerScore++;
-        result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
+        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`;
     }
     else if (choice == "rock" && computerAction == "rock") {
         result.textContent = "Tie!";
     }
     else if (choice == "rock" && computerAction == "scissors") {
         playerScore++;
-        result.textContent = `You win! ${choice} beats ${computerAction}.`;
+        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`;
     }
     else if (choice == "paper" && computerAction == "rock") {
-        result.textContent = `You win! ${choice} beats ${computerAction}.`; 
+        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`; 
     }
     else if (choice == "paper" && computerAction == "scissors") {
         computerScore++;
-        result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
+        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`;
     }
     else if (choice == "paper" && computerAction == "paper") {
         result.textContent = `Tie!`; 
     }
     else if (choice == "scissors" && computerAction == "paper") {
         playerScore++;
-        result.textContent = `You win! ${choice} beats ${computerAction}.`; 
+        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`; 
     }
     else if (choice == "scissors" && computerAction == "rock") {
         computerScore++;
-        result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
+        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`;
     }
     else if (choice == "scissors" && computerAction == "scissors") {
         playerScore++;
@@ -89,6 +92,7 @@ footer.style.justifyContent = 'center';
 footer.style.alignItems = 'center';
 
 const result = document.querySelector(".result");
+result.style.fontSize = "32px";
 
 const tally = document.createElement('div');
 tally.style.display = 'flex';
