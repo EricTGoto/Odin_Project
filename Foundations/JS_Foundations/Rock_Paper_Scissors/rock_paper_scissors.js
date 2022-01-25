@@ -8,45 +8,46 @@ function convertNumToRockPaperScissors(num) {
     else return "scissors"
 }
 
-function playRound() {
-    const action = window.prompt("What do you choose", "rock").toLowerCase();
+function playRound(choice) {
     const computerAction = convertNumToRockPaperScissors(computerPlay());
+    
+    const result = document.querySelector(".result");
 
-    if (action == "rock" && computerAction == "paper") {
-        console.log(`You lose! ${action} loses to ${computerAction}`)
-        return 1
+    console.log(choice)
+    console.log(computerAction)
+    if (choice == "rock" && computerAction == "paper") {
+        result.textContent = `You lose! ${choice} loses to ${computerAction}`;
+        
     }
-    else if (action == "rock" && computerAction == "rock") {
-        console.log("Tie")
-        return 0
+    else if (choice == "rock" && computerAction == "rock") {
+        result.textContent = "Tie";
+        
     }
-    else if (action == "rock" && computerAction == "scissors") {
-        console.log(`You win! ${action} beats ${computerAction}`)
-        return 2
+    else if (choice == "rock" && computerAction == "scissors") {
+        result.textContent = `You win! ${choice} beats ${computerAction}`;
+        
     }
-    else if (action == "paper" && computerAction == "rock") {
-        console.log(`You win! ${action} beats ${computerAction}`)
-        return 2
+    else if (choice == "paper" && computerAction == "rock") {
+        result.textContent = `You win! ${choice} beats ${computerAction}`;
+        
     }
-    else if (action == "paper" && computerAction == "scissors") {
-        console.log(`You lose! ${action} loses to ${computerAction}`)
-        return 1
+    else if (choice == "paper" && computerAction == "scissors") {
+        result.textContent = `You lose! ${choice} loses to ${computerAction}`;
+        
     }
-    else if (action == "paper" && computerAction == "paper") {
-        console.log(`Tie!`)
-        return 0
+    else if (choice == "paper" && computerAction == "paper") {
+        result.textContent = `Tie!`;
+        
     }
-    else if (action == "scissors" && computerAction == "paper") {
-        console.log(`You win! ${action} beats ${computerAction}`)
-        return 2
+    else if (choice == "scissors" && computerAction == "paper") {
+        result.textContent = `You win! ${choice} beats ${computerAction}`;
+       
     }
-    else if (action == "scissors" && computerAction == "rock") {
-        console.log(`You lose! ${action} loses to ${computerAction}`)
-        return 1
+    else if (choice == "scissors" && computerAction == "rock") {
+        result.textContent = `You lose! ${choice} loses to ${computerAction}`;
     }
-    else if (action == "scissors" && computerAction == "scissors") {
-        console.log("Tie!")
-        return 0
+    else if (choice == "scissors" && computerAction == "scissors") {
+        result.textContent = "Tie!";
     }
 }
 
@@ -55,17 +56,16 @@ function game() {
     let playerWins = 0;
     let computerWins = 0;
     let result;
-    while (count < 5) {
-        result = playRound()
-        if (result == 2) playerWins++
-        else if (result == 1) computerWins++
-        count++;
-    }
-
-    if (playerWins > computerWins) console.log("Player wins overall")
-    else if (playerWins < computerWins) console.log("Computer wins overall")
-    else console.log("Overall tie")
-
+    
+    result = playRound()
+     
 }
+const container = document.querySelector('.container');
 
-game();
+
+const buttons = document.querySelectorAll('.buttons');
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        playRound(e.target.className);
+    });
+});
