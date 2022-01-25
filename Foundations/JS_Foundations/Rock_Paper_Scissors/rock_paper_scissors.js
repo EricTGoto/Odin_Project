@@ -10,57 +10,57 @@ function convertNumToRockPaperScissors(num) {
 
 function playRound(choice) {
     const computerAction = convertNumToRockPaperScissors(computerPlay());
-    const result = document.querySelector(".result");
+    
     
     if (choice == "rock" && computerAction == "paper") {
+        computerScore++;
         result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
     }
     else if (choice == "rock" && computerAction == "rock") {
         result.textContent = "Tie!";
     }
     else if (choice == "rock" && computerAction == "scissors") {
+        playerScore++;
         result.textContent = `You win! ${choice} beats ${computerAction}.`;
     }
     else if (choice == "paper" && computerAction == "rock") {
         result.textContent = `You win! ${choice} beats ${computerAction}.`; 
     }
     else if (choice == "paper" && computerAction == "scissors") {
+        computerScore++;
         result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
     }
     else if (choice == "paper" && computerAction == "paper") {
         result.textContent = `Tie!`; 
     }
     else if (choice == "scissors" && computerAction == "paper") {
+        playerScore++;
         result.textContent = `You win! ${choice} beats ${computerAction}.`; 
     }
     else if (choice == "scissors" && computerAction == "rock") {
+        computerScore++;
         result.textContent = `You lose! ${choice} loses to ${computerAction}.`;
     }
     else if (choice == "scissors" && computerAction == "scissors") {
+        playerScore++;
         result.textContent = "Tie!";
     }
+    playerScoreElement.textContent = `Player: ${playerScore}`;
+    computerScoreElement.textContent = `Computer: ${computerScore}`;
 }
 
-function game() {
-    let count = 0;
-    let playerWins = 0;
-    let computerWins = 0;
-    let result;
-    
-    result = playRound()  
-}
+let playerScore = 0;
+let computerScore = 0;
 
 const container = document.querySelector('.container');
 
-// this query selector all doesn't make sense since there's only one buttons?
-const buttons = document.querySelectorAll('.buttons');
-
+// when buttons are pressed, a round is played
+const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-        console.log(e.explicitOriginalTarget.parentElement.className) // allows me to select the rock button instead of the image itself
         playRound(e.explicitOriginalTarget.parentElement.className);
-    });
-});
+    })
+})
 
 const body = document.querySelector("body");
 body.style.backgroundColor = '#9BC1BC';
@@ -87,3 +87,17 @@ footer.style.height = '10vh';
 footer.style.display= 'flex';
 footer.style.justifyContent = 'center';
 footer.style.alignItems = 'center';
+
+const result = document.querySelector(".result");
+
+const tally = document.createElement('div');
+tally.style.display = 'flex';
+tally.style.gap = "20px";
+tally.style.fontSize = "30px";
+
+const playerScoreElement = document.createElement('div');
+const computerScoreElement = document.createElement('div');
+
+tally.appendChild(playerScoreElement);
+tally.appendChild(computerScoreElement);
+container.appendChild(tally);
