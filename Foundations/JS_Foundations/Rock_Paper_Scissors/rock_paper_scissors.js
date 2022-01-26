@@ -13,6 +13,12 @@ function showWinAlert() {
     body.appendChild(overlay);
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreElement.textContent = `Player: ${playerScore}`;
+    computerScoreElement.textContent = `Computer: ${computerScore}`;
+}
 function convertNumToRockPaperScissors(num) {
     if (num == 0) return "rock"
     else if (num == 1) return "paper"
@@ -68,6 +74,7 @@ function playRound(choice) {
 function turnOffOverlay() {
     const overlay = document.querySelector('.overlay');
     body.removeChild(overlay);
+    resetGame();
 }
 
 let playerScore = 0;

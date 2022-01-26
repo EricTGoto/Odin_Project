@@ -540,7 +540,7 @@ git notes:
 Jan 25:
 - make my rps ui look better, add colours and show what the computer selected, try to use as much JS as possible
 - want to implement:
-    - reset after pressing play again
+    - reset after pressing play again: done
     - refactor code so there aren't any globals?
     - make js easier to read
     - separate into multiple js files? one for DOM and other for logic?
