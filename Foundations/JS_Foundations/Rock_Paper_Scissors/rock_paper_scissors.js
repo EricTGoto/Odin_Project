@@ -2,6 +2,17 @@ function computerPlay() {
     return(Math.floor(Math.random() * 3))
 }
 
+function showWinAlert() {
+    if(playerScore == 5){
+        notificationContainer.textContent = 'You win!';
+    }
+    else if (computerScore == 5){
+        notificationContainer.textContent = 'You lose!';
+    }
+    notificationContainer.appendChild(confirmButton);
+    body.appendChild(overlay);
+}
+
 function convertNumToRockPaperScissors(num) {
     if (num == 0) return "rock"
     else if (num == 1) return "paper"
@@ -51,50 +62,14 @@ function playRound(choice) {
     playerScoreElement.textContent = `Player: ${playerScore}`;
     computerScoreElement.textContent = `Computer: ${computerScore}`;
 
-    if(playerScore == 1){
-        const overlay = document.createElement('div');
-        overlay.classList.add('overlay');
-        overlay.style.display = 'flex';
-        overlay.style.flexDirection = 'column';
-        overlay.style.gap = '50px';
-        overlay.style.alignItems = 'center';
-        overlay.style.justifyContent = 'center';
-        overlay.style.position = 'fixed';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.fontSize = '30px';
-        overlay.style.backgroundColor = 'rgb(0,0,0,0.3)';
-        overlay.style.zIndex = '2';
-        
-        const notificationContainer = document.createElement('div');
-        notificationContainer.style.backgroundColor = 'white';
-        notificationContainer.style.flexBasis = 'auto';
-        notificationContainer.style.display = 'flex';
-        notificationContainer.style.width = '350px';
-        notificationContainer.style.height = '200px';
-        notificationContainer.style.gap = '30px';
-        notificationContainer.style.borderRadius = '8px';
-        notificationContainer.style.flexDirection = 'column';
-        notificationContainer.style.alignItems = 'center';
-        notificationContainer.style.justifyContent = 'center';
-        notificationContainer.textContent = 'hasoda';
-        
-        const confirmButton = document.createElement('button');
-        confirmButton.textContent = 'Play Again';
-        confirmButton.style.fontSize = '20px';
-        confirmButton.style.padding = '10px 16px';
-        confirmButton.addEventListener('click', turnOffOverlay)
-
-        notificationContainer.appendChild(confirmButton);
-        overlay.appendChild(notificationContainer);
-        body.appendChild(overlay);
-    }
+    if (playerScore == 5 || computerScore == 5) showWinAlert()  
 }
 
 function turnOffOverlay() {
     const overlay = document.querySelector('.overlay');
     body.removeChild(overlay);
 }
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -149,3 +124,45 @@ const computerScoreElement = document.createElement('div');
 tally.appendChild(playerScoreElement);
 tally.appendChild(computerScoreElement);
 container.appendChild(tally);
+
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+overlay.style.display = 'flex';
+overlay.style.flexDirection = 'column';
+overlay.style.gap = '50px';
+overlay.style.alignItems = 'center';
+overlay.style.justifyContent = 'center';
+overlay.style.position = 'fixed';
+overlay.style.width = '100%';
+overlay.style.height = '100%';
+overlay.style.fontSize = '30px';
+overlay.style.backgroundColor = 'rgb(0,0,0,0.3)';
+overlay.style.zIndex = '2';
+
+const notificationContainer = document.createElement('div');
+notificationContainer.style.backgroundColor = '#5D576B';
+notificationContainer.style.flexBasis = 'auto';
+notificationContainer.style.display = 'flex';
+notificationContainer.style.width = '350px';
+notificationContainer.style.height = '200px';
+notificationContainer.style.gap = '30px';
+notificationContainer.style.borderRadius = '8px';
+notificationContainer.style.borderStyle = 'solid';
+notificationContainer.style.borderWidth = 'thin';
+notificationContainer.style.borderColor = 'black';
+notificationContainer.style.flexDirection = 'column';
+notificationContainer.textContent = 'wawaw!';
+notificationContainer.style.alignItems = 'center';
+notificationContainer.style.justifyContent = 'center';
+notificationContainer.style.color = 'white';
+
+const confirmButton = document.createElement('button');
+confirmButton.classList.add('confirmButton');
+confirmButton.textContent = 'Play Again';
+confirmButton.style.fontSize = '20px';
+confirmButton.style.padding = '10px 16px';
+confirmButton.style.borderRadius = '8px';
+confirmButton.style.backgroundColor = 'white';
+confirmButton.addEventListener('click', turnOffOverlay);
+
+overlay.appendChild(notificationContainer);
