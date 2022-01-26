@@ -1,36 +1,10 @@
-function computerPlay() {
-    return(Math.floor(Math.random() * 3))
-}
+let playerScore = 0;
+let computerScore = 0;
 
-function showWinAlert() {
-    if(playerScore == 5){
-        notificationContainer.textContent = 'You win!';
-    }
-    else if (computerScore == 5){
-        notificationContainer.textContent = 'You lose!';
-    }
-    notificationContainer.appendChild(confirmButton);
-    body.appendChild(overlay);
-}
-
-function resetGame() {
-    playerScore = 0;
-    computerScore = 0;
-    playerScoreElement.textContent = `Player: ${playerScore}`;
-    computerScoreElement.textContent = `Computer: ${computerScore}`;
-}
-function convertNumToRockPaperScissors(num) {
-    if (num == 0) return "rock"
-    else if (num == 1) return "paper"
-    else return "scissors"
-}
-
-function playRound(choice) {
+function playRound(e) {
+    const choice = e.explicitOriginalTarget.parentElement.className;
     const computerAction = convertNumToRockPaperScissors(computerPlay());
-    
-    let firstLetter = choice.substr(0,1);
-    let firstLetterCapitalized = firstLetter.toUpperCase();
-    let capitalizedWord = firstLetterCapitalized + choice.substr(1);
+    const capitalizedWord = capitalizeFirstLetter(choice);
 
     if (choice == "rock" && computerAction == "paper") {
         computerScore++;
@@ -68,7 +42,18 @@ function playRound(choice) {
     playerScoreElement.textContent = `Player: ${playerScore}`;
     computerScoreElement.textContent = `Computer: ${computerScore}`;
 
-    if (playerScore == 5 || computerScore == 5) showWinAlert()  
+    if (playerScore == 5 || computerScore == 5) showWinAlert();
+}
+
+function showWinAlert() {
+    if(playerScore == 5){
+        notificationContainer.textContent = 'You win!';
+    }
+    else if (computerScore == 5){
+        notificationContainer.textContent = 'You lose!';
+    }
+    notificationContainer.appendChild(confirmButton);
+    body.appendChild(overlay);
 }
 
 function turnOffOverlay() {
@@ -77,17 +62,36 @@ function turnOffOverlay() {
     resetGame();
 }
 
-let playerScore = 0;
-let computerScore = 0;
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreElement.textContent = `Player: ${playerScore}`;
+    computerScoreElement.textContent = `Computer: ${computerScore}`;
+}
+
+function convertNumToRockPaperScissors(num) {
+    if (num == 0) return "rock"
+    else if (num == 1) return "paper"
+    else return "scissors"
+}
+
+function capitalizeFirstLetter(word) {
+    let firstLetter = word.substr(0,1);
+    let firstLetterCapitalized = firstLetter.toUpperCase();
+    let capitalizedWord = firstLetterCapitalized + word.substr(1);
+    return capitalizedWord
+}
+
+function computerPlay() {
+    return(Math.floor(Math.random() * 3))
+}
 
 const container = document.querySelector('.container');
 
 // when buttons are pressed, a round is played
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        playRound(e.explicitOriginalTarget.parentElement.className);
-    })
+    button.addEventListener('click', playRound)
 })
 
 const body = document.querySelector("body");

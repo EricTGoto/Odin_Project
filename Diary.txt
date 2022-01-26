@@ -544,5 +544,6 @@ Jan 25:
     - refactor code so there aren't any globals?
     - make js easier to read
     - separate into multiple js files? one for DOM and other for logic?
+    - comment code
 - learned that modifying textContent removes all childNodes
 
