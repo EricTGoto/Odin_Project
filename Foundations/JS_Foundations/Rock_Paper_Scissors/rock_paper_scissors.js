@@ -50,8 +50,51 @@ function playRound(choice) {
     }
     playerScoreElement.textContent = `Player: ${playerScore}`;
     computerScoreElement.textContent = `Computer: ${computerScore}`;
+
+    if(playerScore == 1){
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column';
+        overlay.style.gap = '50px';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.position = 'fixed';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.fontSize = '30px';
+        overlay.style.backgroundColor = 'rgb(0,0,0,0.3)';
+        overlay.style.zIndex = '2';
+        
+        const notificationContainer = document.createElement('div');
+        notificationContainer.style.backgroundColor = 'white';
+        notificationContainer.style.flexBasis = 'auto';
+        notificationContainer.style.display = 'flex';
+        notificationContainer.style.width = '350px';
+        notificationContainer.style.height = '200px';
+        notificationContainer.style.gap = '30px';
+        notificationContainer.style.borderRadius = '8px';
+        notificationContainer.style.flexDirection = 'column';
+        notificationContainer.style.alignItems = 'center';
+        notificationContainer.style.justifyContent = 'center';
+        notificationContainer.textContent = 'hasoda';
+        
+        const confirmButton = document.createElement('button');
+        confirmButton.textContent = 'Play Again';
+        confirmButton.style.fontSize = '20px';
+        confirmButton.style.padding = '10px 16px';
+        confirmButton.addEventListener('click', turnOffOverlay)
+
+        notificationContainer.appendChild(confirmButton);
+        overlay.appendChild(notificationContainer);
+        body.appendChild(overlay);
+    }
 }
 
+function turnOffOverlay() {
+    const overlay = document.querySelector('.overlay');
+    body.removeChild(overlay);
+}
 let playerScore = 0;
 let computerScore = 0;
 
@@ -83,13 +126,14 @@ body.insertBefore(header, container);
 
 const footer = document.createElement('div');
 footer.textContent = "Eric Goto 2022";
-body.appendChild(footer);
+footer.style.fontSize = '16px';
 footer.style.backgroundColor = '#ED6A5A';
 footer.style.width = '100vw';
 footer.style.height = '10vh';
 footer.style.display= 'flex';
 footer.style.justifyContent = 'center';
 footer.style.alignItems = 'center';
+body.appendChild(footer);
 
 const result = document.querySelector(".result");
 result.style.fontSize = "32px";
