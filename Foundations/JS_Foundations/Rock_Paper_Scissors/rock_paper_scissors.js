@@ -1,3 +1,5 @@
+// code is divided into the logic part and the DOM manipulation part
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -6,39 +8,26 @@ function playRound(e) {
     const computerAction = convertNumToRockPaperScissors(computerPlay());
     const capitalizedWord = capitalizeFirstLetter(choice);
 
-    if (choice == "rock" && computerAction == "paper") {
-        computerScore++;
-        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`;
+    if (
+        (choice == "rock" && computerAction == "scissors") || 
+        (choice == "paper" && computerAction == "rock") ||
+        (choice == "scissors" && computerAction == "paper")
+    ) {
+        playerScore++;
+        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`
     }
-    else if (choice == "rock" && computerAction == "rock") {
+    else if (
+        (choice == "rock" && computerAction == "paper") ||
+        (choice == "paper" && computerAction == "scissors") ||
+        (choice == "scissors" && computerAction == "rock")
+    ) {
+        computerScore++;
+        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`
+    } 
+    else {
         result.textContent = "Tie!";
     }
-    else if (choice == "rock" && computerAction == "scissors") {
-        playerScore++;
-        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`;
-    }
-    else if (choice == "paper" && computerAction == "rock") {
-        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`; 
-    }
-    else if (choice == "paper" && computerAction == "scissors") {
-        computerScore++;
-        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`;
-    }
-    else if (choice == "paper" && computerAction == "paper") {
-        result.textContent = `Tie!`; 
-    }
-    else if (choice == "scissors" && computerAction == "paper") {
-        playerScore++;
-        result.textContent = `You win! ${capitalizedWord} beats ${computerAction}.`; 
-    }
-    else if (choice == "scissors" && computerAction == "rock") {
-        computerScore++;
-        result.textContent = `You lose! ${capitalizedWord} loses to ${computerAction}.`;
-    }
-    else if (choice == "scissors" && computerAction == "scissors") {
-        playerScore++;
-        result.textContent = "Tie!";
-    }
+
     playerScoreElement.textContent = `Player: ${playerScore}`;
     computerScoreElement.textContent = `Computer: ${computerScore}`;
 
@@ -65,8 +54,13 @@ function turnOffOverlay() {
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
+    result.textContent = "Click to Play!";
     playerScoreElement.textContent = `Player: ${playerScore}`;
     computerScoreElement.textContent = `Computer: ${computerScore}`;
+}
+
+function computerPlay() {
+    return(Math.floor(Math.random() * 3))
 }
 
 function convertNumToRockPaperScissors(num) {
@@ -80,10 +74,6 @@ function capitalizeFirstLetter(word) {
     let firstLetterCapitalized = firstLetter.toUpperCase();
     let capitalizedWord = firstLetterCapitalized + word.substr(1);
     return capitalizedWord
-}
-
-function computerPlay() {
-    return(Math.floor(Math.random() * 3))
 }
 
 const container = document.querySelector('.container');
@@ -122,6 +112,7 @@ footer.style.alignItems = 'center';
 body.appendChild(footer);
 
 const result = document.querySelector(".result");
+result.textContent = "Click to Play!";
 result.style.fontSize = "32px";
 
 const tally = document.createElement('div');
@@ -136,6 +127,8 @@ tally.appendChild(playerScoreElement);
 tally.appendChild(computerScoreElement);
 container.appendChild(tally);
 
+// overlay is for the alert that displays when either the player or the AI reaches 5 wins
+// overlay contains the notification container which contains the play again button
 const overlay = document.createElement('div');
 overlay.classList.add('overlay');
 overlay.style.display = 'flex';

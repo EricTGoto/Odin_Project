@@ -547,3 +547,7 @@ Jan 25:
     - comment code
 - learned that modifying textContent removes all childNodes
 
+Jan 26:
+
+- make finishing touches to rps
+    - add some comments, make JS more readable
