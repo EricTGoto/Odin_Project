@@ -551,3 +551,12 @@ Jan 26:
 
 - make finishing touches to rps
     - add some comments, make JS more readable
+
+Feb 5th:
+
+- lost about a week of diary notes because of VM corrupting
+- etch a sketch version 1 is almost finished, just need to centre the sketch and the buttons
+
+Feb 6th:
+
+- finished etch-a-sketch version 1. still feels a little unpolished so more work will need to be done
