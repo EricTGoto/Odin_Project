@@ -560,3 +560,39 @@ Feb 5th:
 Feb 6th:
 
 - finished etch-a-sketch version 1. still feels a little unpolished so more work will need to be done
+
+Feb 7th:
+
+- moved the footer down, added indicators for when a color is selected
+- started learning about JS objects
+
+Notes: 
+    -  eight data types in JS, seven are primitive, eighth is object. the object we learn about here is a plain object
+    -  plain object can be created with curly brackets {}, with an optional list of properties
+        - e.g. let user = {}
+        - property is a key:value pair
+        - property name can be multi word but must be quoted
+    - add/read properties by using dot notation, e.g. user.name = "Bob";
+    - remove a property by using delete: i.e. delete user.name;
+    - can also use square brackets to read/add delete, and this works with any string
+        let user = {}
+        user["likes birds"] = true;
+        alert(user["likes birds"]);
+        delete user["likes birds"];
+    - square brackets also provide a way to obtain the property name as the result of any expression
+        let key = "likes birds";
+        user[key] = true;
+    - can use square brackets in an object literal -> this is a computed property
+        - i.e. can use variables in place of key names
+            name1 = prompt("type in a key name");
+            let name = {
+                [name1] : "John",
+            };
+        - can create complex expressions inside square brackets
+    - reading a non-existing property returns undefined
+    - can test if a property exists using the in operator
+        "age" in user
+    - can use for (key in object) to loop through keys in an object
+    - objects are listed in creation order unless keys are integer properties
+    - many other object types like Array, Date, etc
+    
