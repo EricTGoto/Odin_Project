@@ -595,4 +595,9 @@ Notes:
     - can use for (key in object) to loop through keys in an object
     - objects are listed in creation order unless keys are integer properties
     - many other object types like Array, Date, etc
-    
+
+Feb 8th
+- added eraser and changed reset to clear
+
+March 28th:
+- began full stack javascript path
