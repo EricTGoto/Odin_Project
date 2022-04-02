@@ -4,25 +4,50 @@
     <meta charset="utf-8"/>
     <title>Advanced styling: Task 1</title>
     <style>
-      body {
+        body {
         background-color: #fff;
         color: #333;
         font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
         padding: 1em;
         margin: 0;
-      }
+        }
 
-      * {
+        * {
         box-sizing: border-box;
-      }
+        }
 
-      button,
-      input,
-      select {
+        button,
+        input,
+        select {
         font-family: inherit;
         font-size: 100%;
         padding: 0; margin: 0;
-      }
+        }
+        
+        input[type="search"] {
+            /*appearance none will make the OS level styling disappear, but that is not enough to make the search box uniform across browsers. Other attributes must be explicitly defined (height, width, margin, padding, border-color, etc) */
+            appearance: none;
+            height: 50px;
+            width: 200px;
+            border-color: rgb(240, 194, 138);
+        }
+
+        input[type="search"]:hover {
+            border-color: rgb(238, 236, 144);
+        }
+
+        input[type="search"]:focus {
+            outline-style: solid;
+            outline-color: gold;
+        }
+        
+        /* when hovered and focused, want border to be gone and just the outline*/
+        input[type="search"]:hover:focus {
+            border-style: none;
+            outline-style: solid;
+            outline-color: gold;
+            outline-width: 2px;
+        }
     </style>
   </head>
 
