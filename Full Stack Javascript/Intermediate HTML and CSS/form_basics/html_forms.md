@@ -2,7 +2,7 @@
 All notes made from MDN articles: https://developer.mozilla.org/en-US/docs/Learn/Forms
 
 
-<h2> Form overview </h2>
+<h2><u> Form overview </u></h2>
 
 <h2>Form Styling</h2>
 
@@ -69,4 +69,79 @@ For more examples, refer to html files.
 
 "Ugly" controls have different default looks across browsers, and some parts of their internals are impossible to style. However, there are simple stylings that can be done to make things like sizing, and background-color consistent. You can also use appearance to remove system level styling.
 
-<h3>UI Psuedo-classes</h3>
+<h2>UI Psuedo-classes</h2>
+
+The original pseudo-classes available that are relevant to forms are:
+- :hover : selects an element only when it is being hovered over by a mouse
+- :focus : selects an element only when it is focused (i.e. tabbed to)
+- :active : selects an element only when it is being activated (i.e. clicked on)
+
+Newer ones are:
+- :required and :optional
+- :valid, :invalid, :in-range, :out-of-range
+- :enabled, :disabled, :read-only, :read-write : target enabled or disabled form controls
+- :checked, :indeterminate, :default : target checkboxes and radio buttons
+
+Example:
+
+One basic concept with regards to client-side form validation is whether a form input is required.
+\<input>, \<select>, \<textarea> elements have a required attribute which, when set, requires the client to fill in the control before the form will submit.
+
+```
+<form>
+  <fieldset>
+    <legend>Feedback form</legend>
+    <div>
+      <label for="fname">First name: </label>
+      <input id="fname" name="fname" type="text" required>
+    </div>
+    <div>
+      <label for="lname">Last name: </label>
+      <input id="lname" name="lname" type="text" required>
+    </div>
+    <div>
+      <label for="email">Email address (include if you want a response): </label>
+      <input id="email" name="email" type="email">
+    </div>
+    <div><button>Submit</button></div>
+  </fieldset>
+</form>
+```
+```
+input:required {
+  border: 1px solid black;
+}
+
+input:optional {
+  border: 1px solid silver;
+} 
+```
+
+<h3> Using Generated content with pseudo-classes </h3>
+
+We can use ::before and ::after pseudo-elements along with the content property to make a chunk of content appear before or after the affected element. This is useful when you want to add a visual indicator to an element, but don't want it to be picked up by assistive technologies.
+See the example ui-pseudo-classes.html.
+
+
+<b> Styling controls based on whether their data is valid </b>
+
+Another fundamental concept in form validation is whether a form control's data is valid or not.
+
+<b>:valid and :invalid</b>
+
+You can target form controls using the :valid and :invalid pseudo-classes.
+Read about points to consider here: https://developer.mozilla.org/en-US/docs/Learn/Forms/UI_pseudo-classes#styling_controls_based_on_whether_their_data_is_valid
+
+<b>:in-range and :out-of-range</b>
+
+These pseudo-classes match numeric inputs where range limits are specified by min and max.
+Read more here: https://developer.mozilla.org/en-US/docs/Learn/Forms/UI_pseudo-classes#in-range_and_out-of-range_data
+
+
+<b> Styling Enabled and disabled inputs, and read-only and read-write </b>
+
+Enabled elements can be activated: selected, clicked on, typed into, etc. Disabled elements cannot be interacted in any way, and its data isn't sent to the server.
+
+The two states can be targeted using :enabled and :disabled.
+
+Example use case for disabled inputs: shipping form: address for billing and shipping
