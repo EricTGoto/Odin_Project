@@ -68,6 +68,63 @@
       }
 
 
+      /* Creates the span that the pseudo elements ::before and ::after will be positioned absolutely to*/
+      input[type="text"] + span {
+        position: relative;
+      }
+
+      input[type="email"] + span {
+        position: relative;
+      }
+      
+      /* psuedo element where the content elements will go into*/
+      input + span::before {
+        position: absolute;
+        right: -20px;
+        top: 5px;
+      }
+
+      input[type="text"]:invalid {
+        border: 2px solid red;
+      }
+
+      input[type="email"]:invalid {
+        border: 2px solid red;
+      }
+
+      /* if the email or text input is invalid, then create the pseudo element ::before and put the checkmark or X*/
+      input[type="email"]:valid + span::before {
+        content: '✓';
+        color: green;
+      }
+
+      input[type="email"]:invalid + span::before {
+        content: '✖';
+        color: red;
+      }
+
+      input[type="text"]:valid + span::before {
+        content: '✓';
+        color: green;
+      }
+
+      input[type="text"]:invalid + span::before {
+        content: '✖';
+        color: red;
+      }
+
+      /* create another psuedo elemnt for the required indicator. we use after since we used before for the checkmark/X*/
+      input[type="text"] + span::after {
+          position: absolute;
+          top: -26px;
+      }
+
+      input[type="text"]:required + span::after {
+          color: white;
+          background-color: black;
+          content: "Required";
+          left: -70px;
+      }
     </style>
   </head>
 
