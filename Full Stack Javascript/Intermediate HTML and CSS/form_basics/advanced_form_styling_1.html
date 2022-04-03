@@ -27,7 +27,7 @@
         input[type="search"] {
             /*appearance none will make the OS level styling disappear, but that is not enough to make the search box uniform across browsers. Other attributes must be explicitly defined (height, width, margin, padding, border-color, etc) */
             appearance: none;
-            height: 50px;
+            height: 30px;
             width: 200px;
             border-color: rgb(240, 194, 138);
         }
@@ -48,13 +48,27 @@
             outline-color: gold;
             outline-width: 2px;
         }
+
+        input + span {
+          position: relative;
+        }
+
+        input[type="search"] + span::after {
+          position: absolute;
+          content: url("search-24px.png");
+          top: -2px;
+          left: 2px;
+        }
+
     </style>
   </head>
 
   <body>
     <form>
-      <input type="search" name="search" id="search" aria-label="Search our site">
-      <div></div>
+      <div>
+        <input type="search" name="search" id="search" aria-label="Search our site">
+        <span></span>
+      </div>
     </form>
   </body>
 
