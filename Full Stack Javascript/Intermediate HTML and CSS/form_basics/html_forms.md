@@ -162,7 +162,7 @@ Some examples:
 - min/max: sets a integer min/max
 - pattern: sets validation via a regex
 
-<h3>Client-Side Validaiton</h3>
+<h3>Client-Side Validation</h3>
 
 Two types:
 - built in form validation using HTML
@@ -175,3 +175,9 @@ When an element is valid,
 When an element is invalid,
 - element matches the :invalid CSS pseudo-class, and sometimes other UI pseudo-classes (e.g. :out-of-range)
 - if form is submitted, browser will block the form and display an error message
+
+<h3>Forms best practice from UX POV </h3>
+
+- use placeholders, and ensure they are real, e.g. a placeholder for a city should be a real city
+- make inputs required if needed
+- have indicators that show a user has entered information correctly
