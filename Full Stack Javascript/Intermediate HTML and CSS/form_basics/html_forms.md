@@ -4,6 +4,12 @@ All notes made from MDN articles: https://developer.mozilla.org/en-US/docs/Learn
 
 <h2><u> Form overview </u></h2>
 
+The form element is a container element that wraps all of the inputs a user will interact with on a form.
+
+The form element accepts two attributes:
+- action: takes URL to tell form where to send data for back end processing
+- method: tells browser which HTTP method to use to submit the form
+
 <h2>Form Styling</h2>
 
 Difficulty of styling forms with CSS can be divided into three categories:
@@ -145,3 +151,27 @@ Enabled elements can be activated: selected, clicked on, typed into, etc. Disabl
 The two states can be targeted using :enabled and :disabled.
 
 Example use case for disabled inputs: shipping form: address for billing and shipping
+
+<h2>Form Validation <h2>
+
+Validations allow constraints on what data users can enter into an input.
+
+Some examples:
+- required: makes the field required
+- minlength/maxlength: sets a min/max length (character)
+- min/max: sets a integer min/max
+- pattern: sets validation via a regex
+
+<h3>Client-Side Validaiton</h3>
+
+Two types:
+- built in form validation using HTML
+- JS validation
+
+When an element is valid,
+- element matches :valid CSS pseudo-class
+- is form is submitted, browser will submit the form, unless something else is stopping it (e.g. JS)
+
+When an element is invalid,
+- element matches the :invalid CSS pseudo-class, and sometimes other UI pseudo-classes (e.g. :out-of-range)
+- if form is submitted, browser will block the form and display an error message
