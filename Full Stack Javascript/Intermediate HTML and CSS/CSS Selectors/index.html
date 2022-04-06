@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    main > div {
+      font-size: large;
+    }
+
+    .group1 + div + div {
+      font-size: small;
+    }
+
+    .group3 > div {
+      color: blue;
+    }
+
+    .group3 > div::selection {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <main class="parent">
+    <div class="child group1">
+      <div class="grand-child group1">grand-child group 1</div>
+    </div>
+    <div class="child group2">
+      <div class="grand-child group2">grand-child group2</div>
+    </div>
+    <div class="child group3">
+      <div class="grand-child group3">grand-child group3</div>
+      <div class="grand-child group3">grand-child2 group3</div>
+      <div class="grand-child group3">grand-child3 group3</div>
+    </div>
+    <div class="child group4">
+      <div class="grand-child group4">grand-child group4</div>
+    </div>
+  </main>
+</body>
+</html>
