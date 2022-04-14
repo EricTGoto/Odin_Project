@@ -26,3 +26,18 @@ Short hand for these is ```grid-column``` and ```grid-row```. Use / and put the 
 
 Can shorthand even further by using grid-area.
 Grid-area can also be used to create a visual layout of the grid in words.
+
+<b>fr</b>
+
+fr (fractional units) can be used to make dynamic grid tracks. distributes remaining space in grid.
+
+<b>Dynamic min and max sizes</b>
+
+minmax(): takes two arguments: min size grid track can be, max size grid track can be
+
+clamp(): takes three arguments: min, ideal, max
+
+auto-fit() and auto-fill(): return largest positive integer without overflowing grid, often incorporated with minmax()
+
+
+auto-fit() will keep grid items at their max size when grid is expanded while auto-fill() will snap items to their min size once space becomes available
