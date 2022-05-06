@@ -17,6 +17,7 @@ See above. Also until the hooks update a function based component was stateless.
 
 5. How should you structure you application into components?
 
+Break parts of application into smaller parts (components). Each component should just have one function.
 
 6. What does create-react-app do?
 
@@ -24,4 +25,4 @@ Sets up the base of a React app. Enables you to immediately start working on you
 
 7. Instead of the DOM tree, what is displayed when you inspect and element using the Components tab provided by React Developer Tools?
 
-State, props
+State, props, hooks
